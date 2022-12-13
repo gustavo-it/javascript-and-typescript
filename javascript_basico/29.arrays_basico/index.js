@@ -36,6 +36,20 @@ alunos.pop();
 
 // salvando em uma variável
 const removido = alunos.pop();
+console.log(removido);
+console.log(alunos);
 
 // removendo do começo
 alunos.shift();
+
+// No indice 1 terá um elemento vazio
+delete alunos[1];
+
+// Utilizando slice para pegar uma parte da lista
+console.log(alunos.slice(0, 2));
+
+// Array é considerado um objeto
+console.log(typeof alunos);
+
+// Retorna 'true' se for um array e 'false'
+console.log(alunos instanceof Array);
