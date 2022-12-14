@@ -53,29 +53,28 @@ function meuEscopo () {
 // Agora vamos inserir os dados que a pessoa enviou em uma div
 // Além de adiciona-los a um array.
 function meuEscopo () {
-    const form = window.document.querySelector('.form');
-    const resultado = window.document.querySelector('.resultado');
-    const pessoas = [];
-    function recebeEventoForm (evento) {
-        evento.preventDefault();
-        const nome = form.querySelector('.nome');
-        const sobrenome = form.querySelector('.sobrenome');
-        const idade = form.querySelector('.idade');
+    const form = window.document.querySelector('.form'); // Pegando o form
+    const resultado = window.document.querySelector('.resultado'); // Pegando a div resultado
+    const pessoas = []; // Criando um array
+    function recebeEventoForm (evento) { //Essa função pega o evento submit
+        evento.preventDefault(); // indica ao navegador para não fazer o padrão(enviar os dados)
+        const nome = form.querySelector('.nome'); // pegando o input nome
+        const sobrenome = form.querySelector('.sobrenome'); // pegando o input sobrenome
+        const idade = form.querySelector('.idade'); // pegando o input idade
 
-        // console.log(nome.value, sobrenome.value, idade.value);
-
-        let pessoa = {
-            nome:nome.value,
-            sobrenome: sobrenome.value,
-            idade: idade.value
+        let pessoa = { // criando um objeto
+            nome:nome.value, // recebe o conteúdo da div nome
+            sobrenome: sobrenome.value, // recebe o conteúdo da div sobrenome
+            idade: idade.value // recebe o conteúdo da div idade
         };
-        pessoas.push(pessoa);
-        console.log(pessoas);
-        resultado.innerHTML = `<p>Nome: ${nome.value}</p>`;
+        pessoas.push(pessoa); // adicionando dados ao meu array
+        console.log(pessoas); // mostrando o array
+        resultado.innerHTML = `<p>Nome: ${nome.value}</p>`; // adicionando o valor do input ao html
         resultado.innerHTML += `<p>Sobreome: ${sobrenome.value}</p>`;
         resultado.innerHTML += `<p>Idade: ${idade.value}</p>`;
     };
-    form.addEventListener('submit', recebeEventoForm);
+    form.addEventListener('submit', recebeEventoForm); // addEventListener -> manipulador de eventos
+    // indicamos o evento 'submit', indicamos uma função que contém o que vai ser feito naquele evento
 }
 
 meuEscopo();
