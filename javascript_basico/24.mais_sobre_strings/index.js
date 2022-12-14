@@ -24,10 +24,10 @@ console.log(umtexto.match(/[a-z]/));
 // substituir uma palavra
 console.log(umtexto.replace('aqui', 'agora vem o novo valor'));
 
-// substituindo o primeiro a que ele encontrar
+// substituindo o primeiro 'a' que ele encontrar
 console.log(umtexto.replace(/a/, '#'))
 
-// substituindo o primeiro a em toda a frase
+// substituindo o 'a' em toda a frase
 console.log(umtexto.replace(/a/g, '#'));
 
 // Verificando quantos caracteres tem na string
